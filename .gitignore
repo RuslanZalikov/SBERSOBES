@@ -2,3 +2,5 @@ model-store/
 save_model/
 logs/
 venv/
+.idea/
+test.py
