@@ -3,4 +3,5 @@ save_model/
 logs/
 venv/
 .idea/
-test.py
+example/
+restart

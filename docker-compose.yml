@@ -6,6 +6,6 @@ services:
       - "./model-store:/code/model-store"
       - "./save_model:/code/save_model"
     ports:
-      - "9090:8080"
-      - "9091:8081"
-      - "9092:8082"
+      - "8080:8080"
+      - "8081:8081"
+      - "8082:8082"
