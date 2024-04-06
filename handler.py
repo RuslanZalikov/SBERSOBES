@@ -16,8 +16,9 @@ class Handler(TextHandler):
         self.config = None
 
     def initialize(self, context):
-        self.tokenizer = BertTokenizerFast.from_pretrained("/code/save_model/tokenizer/", local_files_only=True)
-        self.config = BertConfig.from_pretrained(f"/code/save_model/model", local_files_only=True)
+        path = "/code/"
+        self.tokenizer = BertTokenizerFast.from_pretrained(path+"save_model/tokenizer/", local_files_only=True)
+        self.config = BertConfig.from_pretrained(path+"/save_model/model", local_files_only=True)
         self.model = AutoModelForSequenceClassification.from_config(self.config)
 
 
