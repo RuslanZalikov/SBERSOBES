@@ -1,7 +1,6 @@
 import json
 import torch
 
-from transformers import BertConfig
 from transformers import BertTokenizerFast
 from transformers import AutoModelForSequenceClassification
 
@@ -13,13 +12,11 @@ class Handler(TextHandler):
         super().__init__()
         self.model = None
         self.tokenizer = None
-        self.config = None
 
     def initialize(self, context):
         path = "/code/"
         self.tokenizer = BertTokenizerFast.from_pretrained(path+"save_model/tokenizer/", local_files_only=True)
-        self.config = BertConfig.from_pretrained(path+"/save_model/model", local_files_only=True)
-        self.model = AutoModelForSequenceClassification.from_config(self.config)
+        self.model = AutoModelForSequenceClassification.from_pretrained(path+"save_model/model/", local_files_only=True)
 
 
     def preprocess(self, data):
