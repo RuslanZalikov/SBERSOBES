@@ -65,7 +65,7 @@ torchserve --start --model-store model-store --models sentiment=sentiment.mar --
 
 --ts-config : указываем наш файл конфигураций
 
-В моем случае в файле конфигураций я написал лишь хост и порты для сервисов torchserve
+В моем случае в файле конфигураций я написал хост и порты для сервисов torchserve и конфигурацию CORS
 
 ## Шаг 4.2 Запуск с помощью Docker
 ```bash
@@ -120,11 +120,12 @@ curl http://0.0.0.0:8080/predictions/sentiment -T example/text.txt
   "data": 2
 }
 ```
+```bash
 0 - Нейтрально
 
-1 - Негатив
+1 - Позитив
 
-2 - Позитив
-
+2 - Негатив
+```
 # Разработчик
 tg@RuslanZalikov
